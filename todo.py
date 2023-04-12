@@ -54,5 +54,5 @@ def main_menu():
         show_create_todo_menu()
         main_menu()
 
-# this is entry point
+
 main_menu()
