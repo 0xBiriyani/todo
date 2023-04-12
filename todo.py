@@ -53,5 +53,6 @@ def main_menu():
     elif selected_choice == "2":
         show_create_todo_menu()
         main_menu()
- 
+
+# this is entry point
 main_menu()
