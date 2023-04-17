@@ -1,2 +1,6 @@
-for i in range(100):
-    print(f"{i+1} Eating Healthy Food is not enough")
+num = int(input("Enter a number: "))
+
+if num % 2 == 0:
+    print(num, "is even")
+else:
+    print(num, "is odd")
