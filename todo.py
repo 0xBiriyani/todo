@@ -11,15 +11,15 @@ todos = []
 def show_main_menu():
     print("Welcome to TODO Application")
     print(""" 
-    01. View Todo
-    02. Create Todo
-    03. Update Todo
-    04. Delete Todo
-    05. Exit
+    1. View Todo
+    2. Create Todo
+    3. Update Todo
+    4. Delete Todo
+    5. Exit
     """)
     choice = input("Choose number to perform action:").strip()
-    if choice in ["01","02","03","04","05"]:
-        if choice == "05":
+    if choice in ["1","2","3","4","5"]:
+        if choice == "5":
             print("Bye")
             sys.exit()
         else:
@@ -45,12 +45,12 @@ def main_menu():
     while selected_choice is None:
         selected_choice = show_main_menu()
  
-    if selected_choice == "01":
+    if selected_choice == "1":
         for id,todo in enumerate(todos):
             print(f"ID: {id}, Name: {todo.get('todo_name')}, Due_Date: {todo.get('todo_due_date')}")
         input("press enter key to go to main menu: ")
         main_menu()
-    elif selected_choice == "02":
+    elif selected_choice == "2":
         show_create_todo_menu()
         main_menu()
 
