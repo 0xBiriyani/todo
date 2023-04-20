@@ -1,11 +1,13 @@
-print('Hello Guys')
-def even_odd():
-    num = int(input(" "))
+def even_or_odd():
+    num = int(input("Enter a number: "))
     if num %2 ==0:
-        print("even")
+       return num
     else:
-        print("odd")
+       return num
+    
         
-result = even_odd()
-print(result)
-5
+result = even_or_odd()
+if result%2==0:
+    print(result, "is a even number")
+if result%2==1:
+    print(result,"is a odd numebr")
