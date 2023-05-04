@@ -10,6 +10,38 @@ import time
 clear = lambda: os.system("cls")  # clear terminal
 todos = []
 
+def get_new_id():
+    id = None
+    with open("todos.csv","r") as f:
+        f.readline() # skip header
+        for line in f.readlines():
+            id = int(line.split(",")[0])
+    return id + 1
+
+def fileops(command:str, todo:dict, id:int) -> list:
+    # command = "show, create, update, delete"
+    # retrive todos from file
+    temp_todos = []
+    if command == "show":
+        with open("todos.csv", "r") as f:
+            f.readline() # skip header
+            for line in f.readlines():
+                todo_id, todo_name, todo_status, todo_due_date = line.strip().split(",")
+                temp_todos.append({"todo_id": todo_id,
+                                   "todo_status": todo_status,
+                                   "todo_name": todo_name,
+                                   "todo_due_date": todo_due_date})
+        return temp_todos
+
+    elif command == "create":
+        with open("todos.csv", "a") as f:
+            id = get_new_id()
+            f.write(f"{id},{todo.get('todo_name')},{todo.get('todo_status')},{todo.get('todo_due_date')}\n")
+        return "done"
+    elif command == "update":
+        pass
+    elif command == "delete":
+        pass
 
 def show_main_menu():
     print("Welcome to TODO Application")
@@ -39,30 +71,39 @@ def show_create_todo_menu():
     clear()
     todo_name = input("Enter Todo Name:")
     todo_due_date = input("Enter Todo Due Date(YYYY-MM-DD):")
-    todos.append({"todo_name": todo_name, "todo_due_date": todo_due_date})
-    print("Todo Added to your list :)")
-    time.sleep(1)
-    print("Returning to Main Menu...")
-    time.sleep(1)
-    clear()
+    result = fileops("create", {"todo_name": todo_name,
+                                "todo_status": 'created',
+                                "todo_due_date": todo_due_date}, None)
+    if result == "done":
+        print("Todo Added to your list :)")
+        time.sleep(1)
+        print("Returning to Main Menu...")
+        time.sleep(1)
+        clear()
+    else:
+        print("Something went wrong, Please try again later :(")
+        time.sleep(1)
+        print("Returning to Main Menu...")
+        time.sleep(1)
+        clear()
 
-
-def main_menu():
+def main():
     clear()
     selected_choice = show_main_menu()
     while selected_choice is None:
         selected_choice = show_main_menu()
 
     if selected_choice == "1":
-        for id, todo in enumerate(todos):
+        for todo in fileops("show", None, None):
             print(
-                f"ID: {id}, Name: {todo.get('todo_name')}, Due_Date: {todo.get('todo_due_date')}"
+                f"ID: {todo.get('todo_id')}, Name: {todo.get('todo_name')}, Status: {todo.get('todo_status')}, Due Date: {todo.get('todo_due_date')}"
             )
         input("press enter key to go to main menu: ")
-        main_menu()
+
+        main()
     elif selected_choice == "2":
         show_create_todo_menu()
-        main_menu()
+        main()
 
 
-main_menu()
+main()
