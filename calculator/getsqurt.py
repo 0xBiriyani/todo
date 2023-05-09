@@ -5,7 +5,6 @@
 import math
     
 
-
 def getsqurt():
     num1=input("Enter a number:")
     try:
@@ -14,5 +13,6 @@ def getsqurt():
     except:
         print("invalid input")
         getsqurt()
-    
-getsqurt()
+
+if __name__ == "__main__":
+    getsqurt()
