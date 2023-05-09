@@ -2,9 +2,6 @@
 #  Square root Module  #
 ##############################
 
-import math
-    
-
 def getsqurt():
     num1=input("Enter a number:")
     try:
