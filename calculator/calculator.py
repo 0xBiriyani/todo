@@ -4,6 +4,7 @@
 ############################################
 import sys
 from getsqurt import getsqurt
+from Multiplication import multiplication
 
 def show_menu() -> str:
     choice = input("""
@@ -24,7 +25,8 @@ def show_menu() -> str:
     elif choice == '3':
         pass
     elif choice == '4':
-        pass
+        multiplication()
+        show_menu()
     elif choice == '5':
         getsqurt()
         show_menu()
