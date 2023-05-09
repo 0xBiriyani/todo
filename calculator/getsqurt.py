@@ -13,12 +13,17 @@ def getsqurt():
         print (math.sqrt(num1))
     except:
         print("invalid input")
-        getsqurt()
+        ch=input("If you want to continue(y/n):")
+        if(ch=='Y' or ch=='y'):
+            getsqurt()
         
-getsqurt()    
+if __name__=="__main__":
+   getsqurt()   
+   
 def getaddition():
     num1=input("Enter a number:")
     num2=input("Enter a number:")
+    
     try:
         num1=float(num1)
         num2=float(num1)
