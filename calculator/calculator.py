@@ -5,6 +5,8 @@
 import sys
 from getsqurt import getsqurt
 from Multiplication import multiplication
+from subtraction import subtraction
+from addition import addition
 
 def show_menu() -> str:
     choice = input("""
@@ -19,11 +21,13 @@ def show_menu() -> str:
     Select your choice:"""
     )
     if choice == '1':
-        pass
+        addition()
+        show_menu()
     elif choice == '2':
         pass
     elif choice == '3':
-        pass
+        subtraction()
+        show_menu()
     elif choice == '4':
         multiplication()
         show_menu()
