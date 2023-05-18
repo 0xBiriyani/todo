@@ -26,4 +26,4 @@ def buy_somethings(money, items_list):
     for item in items_list:
         for shop_item in shop:
             if item['name'] == shop_item['name']:
-                pass
+                pass 

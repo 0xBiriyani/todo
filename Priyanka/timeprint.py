@@ -1,12 +1,16 @@
-import time
+import time 
 #import datetime
 import os
 
-#file =open ("passsecondsfile.txt","w")
-#file.write(input("write a number in file:"))
-file= open("passsecondsfile.txt", "r")
+choice=(input("Do you want to modify passsecondsfile.txt? Y/N:")).lower()
+if(choice =="y"):
+    file = open("passsecondsfile.txt","w")
+    seconds = input("write a number in file:")
+    file.write(seconds)
+    file.close()
+
+file = open("passsecondsfile.txt", "r")
 seconds=int(file.read())
-print(seconds)
 while True:
     time.sleep(seconds)
     for i in range (seconds):
