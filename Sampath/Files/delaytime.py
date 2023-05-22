@@ -15,4 +15,6 @@ while True:
         print(time.ctime())
         time.sleep(1)
         count +=1
+        if count % delay ==0:
+            print("\n")
         
