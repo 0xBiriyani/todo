@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "title": "The Hunger Games",
+        "quantity": 7
+    },
+    {
+        "id": 2,
+        "title": "Harry Potter",
+        "quantity": 3
+    },
+    {
+        "id": 3,
+        "title": "The Fault in Our Stars",
+        "quantity": 2
+    },
+    {
+        "id": 4,
+        "title": "To Kill a Mockingbird",
+        "quantity": 7
+    },
+    {
+        "id": 5,
+        "title": "The Alchemist",
+        "quantity": 1
+    }
+]
