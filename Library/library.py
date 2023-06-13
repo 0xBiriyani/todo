@@ -15,7 +15,7 @@ class Library:
                 # check if book id is equal to _book id
                 if _book['id'] == book['id']:
                     # increment quantity
-                    _book['quantity'] += 1
+                    _book['quantity'] += book['quantity']
         else:
             # add new books to book
             self.books.append(book)
@@ -41,7 +41,7 @@ print(mylib.books)
 mylib.store_book({
     "id": 5,
     "title": "The Alchemist",
-    "quantity": 1
+    "quantity": 10
 })
 
 print(mylib.books)
